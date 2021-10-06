@@ -1,27 +1,45 @@
-const imgWeather = document.querySelector('.header__img');
+// const imgWeather = document.querySelector('.header__img');
 
-const weather = async function (city) {
+// const weather = async function (city) {
+//   try {
+//     const app = await fetch(
+//       `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=908629ff995a9d02c8cba9cf1d456ee3`
+//     );
+//     const data = await app.json();
+//     const { icon } = data.weather[0];
+
+//     await imageWeather(icon);
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// weather('Oslo');
+
+// async function imageWeather(img) {
+//   try {
+//     const image = await fetch(`http://openweathermap.org/img/wn/${img}@4x.png`);
+//     const data = image.url;
+
+//     console.log(data);
+//   } catch (err) {}
+// }
+
+const weatherApp = async function (city) {
   try {
     const app = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=908629ff995a9d02c8cba9cf1d456ee3`
+      `http://api.weatherstack.com/current?access_key=69c55915eb15d081fab0abe80501217a&query=${city}& language = pl`
     );
-    const data = await app.json();
-    const { icon } = data.weather[0];
 
-    await imageWeather(icon);
+    const data = await app.json();
+
     console.log(data);
+
+    return await data;
   } catch (err) {
     console.log(err);
   }
 };
 
-weather('Oslo');
-
-async function imageWeather(img) {
-  try {
-    const image = await fetch(`http://openweathermap.org/img/wn/${img}@4x.png`);
-    const data = image.url;
-
-    console.log(data);
-  } catch (err) {}
-}
+weatherApp('Poznan');

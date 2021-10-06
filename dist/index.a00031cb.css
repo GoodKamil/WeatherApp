@@ -18,19 +18,22 @@ html {
 }
 
 body {
-  background: url('../img/tło-duże.jpg') no-repeat;
-  font-family: 'Lato', sans-serif;
+  background: url('tło-duże.16504d36.jpg') no-repeat;
+  font-family: 'Merienda', cursive;
   line-height: 1.6;
 }
+
 .wrapper {
   max-width: 144rem;
   margin: var(--margin) auto;
   background-color: var(--color-grey-light);
   height: calc(100vh - 2 * var(--margin));
 }
+
 .contener {
   display: flex;
 }
+
 .search {
   position: relative;
   flex-basis: 40%;
@@ -53,6 +56,7 @@ body {
   width: 100%;
   /* text-align: center; */
 }
+
 .form__text {
   display: block;
   font-size: 3rem;
@@ -61,9 +65,11 @@ body {
   margin-bottom: var(--margin);
   text-align: center;
 }
+
 .input {
   position: relative;
 }
+
 .form__search {
   padding: 1rem 2rem;
   font-size: 2rem;
@@ -72,10 +78,12 @@ body {
   outline: none;
   margin-left: 2rem;
 }
+
 .form__search:focus {
   background-color: var(--color-grey-light);
   border: 2px solid green;
 }
+
 .button__search {
   position: absolute;
   top: 50%;
@@ -93,58 +101,5 @@ body {
   background-color: var(--color-grey);
   text-align: center;
 }
-.country {
-  height: 50vh;
-  width: 50vh;
-}
 
-.country__name {
-  font-size: 4rem;
-  letter-spacing: 2px;
-  padding: 1rem 3rem;
-}
-.country__city {
-  font-size: 3rem;
-  letter-spacing: 2px;
-}
-.country__img {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.country__img--temp {
-  font-size: 4rem;
-  order: -1;
-  flex: 1;
-}
-.temp__icon {
-  font-size: 4rem;
-}
-.atmospheric {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 3rem;
-}
-
-.atmospheric__temp {
-  flex-basis: 50%;
-  font-size: 2rem;
-}
-.icon {
-  margin-right: 0.5rem;
-}
-.img {
-  position: relative;
-}
-.img__weather {
-  position: relative;
-}
-.img__text {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.7rem;
-}
+/*# sourceMappingURL=index.a00031cb.css.map */

@@ -10,7 +10,9 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style/style.css">
 
 </head>
@@ -34,16 +36,22 @@
             <div class="display">
                 <div class="weather">
                     <div class="country">
-                        <h1 class="country__name">Warszawa</h1>
+                        <h1 class="country__name">Polska</h1>
+                        <p class="country__city">Poznań</p>
                         <div class="country__img">
-                            <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="weather">
+                            <div class="img">
+                                <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="weather"
+                                    class="img__weather">
+                                <p class="img__text">Partly Cloudy</p>
+                            </div>
+                            <p class="country__img--temp ">28°c</p>
                         </div>
-                        <p class="country__temp">28*C</p>
-                        <p class="country__temp">28*C</p>
-                        <p class="country__temp">Wind speed: 2.01</p>
-                        <p class="country__temp">Wind deg: 23</p>
-                        <p class="country__temp">Clouds: 100%</p>
-                        <p class="country__temp">Pressure: 989 hPa</p>
+                        <div class="atmospheric">
+                            <p class="atmospheric__temp">Wind: 2.01km/h</p>
+                            <p class="atmospheric__temp">23</p>
+                            <p class="atmospheric__temp">Cloudcover: 100%</p>
+                            <p class="atmospheric__temp ">Pressure: 989 mb</p>
+                        </div>
                     </div>
                 </div>
             </div>
