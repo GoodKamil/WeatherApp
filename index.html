@@ -23,15 +23,14 @@
         <div class="contener">
             <div class="search">
                 <form action="#" class="form">
-                    <div class="label">
-                        <label for="#" class=form__text>City name:</label>
-                    </div>
-                    <div class="input">
-                        <input type="search" class="form__search">
-                        <div class="button__search"><i class="fas fa-search"></i></div>
-                    </div>
-                </form>
 
+                    <input type="text" class="form__search" placeholder="Znajdz miasto">
+                    <button class="search__button">
+                        <svg class="search__icon">
+                            <use xlink:href="src/img/sprite.svg#icon-search"></use>
+                        </svg>
+                    </button>
+                </form>
             </div>
             <div class="display">
                 <div class="weather">
@@ -44,18 +43,63 @@
                                     class="img__weather">
                                 <p class="img__text">Partly Cloudy</p>
                             </div>
-                            <p class="country__img--temp ">28°c</p>
+                            <p class="country__img--temp">28°c</p>
                         </div>
-                        <div class="atmospheric">
-                            <p class="atmospheric__temp">Wind: 2.01km/h</p>
-                            <p class="atmospheric__temp">23</p>
-                            <p class="atmospheric__temp">Cloudcover: 100%</p>
-                            <p class="atmospheric__temp ">Pressure: 989 mb</p>
+                        <div class="packet">
+                            <div class="atmospheric">
+                                <button class="atmospheric__button">
+                                    <svg class="atmospheric__icon">
+                                        <use xlink:href="src/img/sprite.svg#icon-wind"></use>
+                                    </svg>
+                                </button>
+                                <p class="atmospheric__data"> 2.01km/h</p>
+                            </div>
+                            <div class="atmospheric">
+                                <button class="atmospheric__button">
+                                    <svg class="atmospheric__icon">
+                                        <use xlink:href="src/img/sprite1.svg#icon-cloud-rain"></use>
+                                    </svg>
+                                </button>
+                                <p class="atmospheric__data">0.1mm</p>
+                            </div>
+                            <div class="atmospheric">
+                                <button class="atmospheric__button">
+                                    <svg class="atmospheric__icon">
+                                        <use xlink:href="src/img/sprite1.svg#icon-cloud"></use>
+                                    </svg>
+                                </button>
+                                <p class="atmospheric__data"> 56%</p>
+                            </div>
+                            <div class="atmospheric">
+                                <button class="atmospheric__button">
+                                    <svg class="atmospheric__icon">
+                                        <use xlink:href="src/img/sprite.svg#icon-barometer"></use>
+                                    </svg>
+                                </button>
+                                <p class="atmospheric__data "> 989mb</p>
+                            </div>
+                            <div class="atmospheric">
+                                <button class="atmospheric__button">
+                                    <svg class="atmospheric__icon">
+                                        <use xlink:href="src/img/sprite.svg#icon-eye"></use>
+                                    </svg>
+                                </button>
+                                <p class="atmospheric__data "> 12.60km</p>
+                            </div>
+                            <div class="atmospheric">
+                                <button class="atmospheric__button">
+                                    <svg class="atmospheric__icon">
+                                        <use xlink:href="src/img/sprite.svg#icon-droplet"></use>
+                                    </svg>
+                                </button>
+                                <p class="atmospheric__data "> 70%</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 

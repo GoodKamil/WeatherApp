@@ -26,20 +26,20 @@
 //   } catch (err) {}
 // }
 
-const weatherApp = async function (city) {
-  try {
-    const app = await fetch(
-      `http://api.weatherstack.com/current?access_key=69c55915eb15d081fab0abe80501217a&query=${city}& language = pl`
-    );
+// const weatherApp = async function (city) {
+//   try {
+//     const app = await fetch(
+//       `http://api.weatherstack.com/current?access_key=69c55915eb15d081fab0abe80501217a&query=${city}& language = pl`
+//     );
 
-    const data = await app.json();
+//     const data = await app.json();
 
-    console.log(data);
+//     console.log(data);
 
-    return await data;
-  } catch (err) {
-    console.log(err);
-  }
-};
+//     return await data;
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
 
-weatherApp('Poznan');
+// weatherApp('Poznan');
