@@ -1,6 +1,6 @@
 # WeatherApp Kamil-Krawczak
 
-##Clone
+## Clone
 git clone https://github.com/GoodKamil/WeatherApp.git
 
 ## Technologies
