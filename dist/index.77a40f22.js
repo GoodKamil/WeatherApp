@@ -455,26 +455,36 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}]},["9r7sJ"], null, "parcelRequirea848")
-const imgWeather = document.querySelector('.header__img');
-const weather = async function(city) {
+const searchButton = document.querySelector('[data-option="search"]');
+const inputCityName = document.querySelector('[data-option="city"]');
+const countryView = document.querySelector('.weather');
+const renderView = function(curr, location) {
+    const html = `  \n  <div class="country">\n  <h1 class="country__name">${location.country}</h1>\n                        <p class="country__city">${location.name}</p>\n                        <div class="country__img">\n                            <div class="img">\n                                <img src=${curr.weather_icons[0]} alt="weather"\n                                    class="img__weather">\n                                <p class="img__text">${curr.weather_descriptions[0]}</p>\n                            </div>\n                            <p class="country__img--temp">${curr.temperature}°c</p>\n                        </div>\n                        <div class="packet">\n                            <div class="atmospheric">\n                                <button class="atmospheric__button">\n                                    <svg class="atmospheric__icon">\n                                        <use xlink:href="src/img/sprite.svg#icon-wind"></use>\n                                    </svg>\n                                </button>\n                                <p class="atmospheric__data"> ${curr.wind_speed}km/h</p>\n                            </div>\n                            <div class="atmospheric">\n                                <button class="atmospheric__button">\n                                    <svg class="atmospheric__icon">\n                                        <use xlink:href="src/img/sprite1.svg#icon-cloud-rain"></use>\n                                    </svg>\n                                </button>\n                                <p class="atmospheric__data">${curr.precip}mm</p>\n                            </div>\n                            <div class="atmospheric">\n                                <button class="atmospheric__button">\n                                    <svg class="atmospheric__icon">\n                                        <use xlink:href="src/img/sprite1.svg#icon-cloud"></use>\n                                    </svg>\n                                </button>\n                                <p class="atmospheric__data"> ${curr.cloudcover}%</p>\n                            </div>\n                            <div class="atmospheric">\n                                <button class="atmospheric__button">\n                                    <svg class="atmospheric__icon">\n                                        <use xlink:href="src/img/sprite.svg#icon-barometer"></use>\n                                    </svg>\n                                </button>\n                                <p class="atmospheric__data "> ${curr.pressure}mb</p>\n                            </div>\n                            <div class="atmospheric">\n                                <button class="atmospheric__button">\n                                    <svg class="atmospheric__icon">\n                                        <use xlink:href="src/img/sprite.svg#icon-eye"></use>\n                                    </svg>\n                                </button>\n                                <p class="atmospheric__data "> ${curr.visibility}km</p>\n                            </div>\n                            <div class="atmospheric">\n                                <button class="atmospheric__button">\n                                    <svg class="atmospheric__icon">\n                                        <use xlink:href="src/img/sprite.svg#icon-droplet"></use>\n                                    </svg>\n                                </button>\n                                <p class="atmospheric__data "> ${curr.humidity}%</p>\n                            </div>\n                        </div>\n                        </div>`;
+    countryView.innerHTML = '';
+    countryView.insertAdjacentHTML('afterbegin', html);
+};
+const weatherApi = async function(city) {
     try {
-        const app = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=908629ff995a9d02c8cba9cf1d456ee3`);
+        const app = await fetch(`http://api.weatherstack.com/current?access_key=50625a6721c1f31c300f2d36ea7df9b8&query=${city}`);
+        console.log(app);
+        if (!app.ok) throw new Error('Not found . Try again!!!!');
         const data = await app.json();
-        const { icon  } = data.weather[0];
-        await imageWeather(icon);
         console.log(data);
+        // if (!data.success) throw new Error(`Not found country 😯😯 Try again! `);
+        const { current , location  } = data;
+        renderView(current, location);
     } catch (err) {
-        console.log(err);
+        console.error(err);
     }
 };
-weather('Oslo');
-async function imageWeather(img) {
-    try {
-        const image = await fetch(`http://openweathermap.org/img/wn/${img}@4x.png`);
-        const data = image.url;
-        console.log(data);
-    } catch (err) {
-    }
-}
+const Weather = function(e) {
+    e.preventDefault();
+    const cityName = inputCityName.value;
+    if (!cityName || Number(cityName)) return;
+    console.log(cityName);
+    weatherApi(cityName);
+    inputCityName.value = '';
+};
+searchButton.addEventListener('click', Weather); // https://openweathermap.org/img/wn/10d@4x.png
 
 //# sourceMappingURL=index.77a40f22.js.map

@@ -10,6 +10,8 @@
   --color-grey-light: rgba(250, 250, 250, 0.2);
   --color-grey: rgba(250, 250, 250, 0.1);
 
+  --color-blue-light: rgba(150, 234, 245, 0.3);
+
   --margin: 3rem;
 }
 
@@ -19,7 +21,7 @@ html {
 
 body {
   background: url('tło-duże.16504d36.jpg') no-repeat;
-  font-family: 'Merienda', cursive;
+  font-family: 'Lato', sans-serif;
   line-height: 1.6;
 }
 
@@ -32,65 +34,38 @@ body {
 
 .contener {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search {
-  position: relative;
-  flex-basis: 40%;
-  /* background-color: red; */
-  height: calc(100vh - 2 * var(--margin));
+  margin: 3rem 0;
+}
+
+.form__search {
+  padding: 1rem 4rem;
+  font-size: 2rem;
+  font-family: inherit;
+  border-radius: 100px;
+  border: none;
+}
+
+.search__button {
+  background-color: transparent;
+  border: none;
+  margin-left: -40px;
+}
+
+.search__icon {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
 }
 
 .display {
   position: relative;
-  margin-left: auto;
-
+  height: 80vh;
   width: 100%;
-}
-
-.form {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  /* text-align: center; */
-}
-
-.form__text {
-  display: block;
-  font-size: 3rem;
-  font-family: inherit;
-  letter-spacing: 1rem;
-  margin-bottom: var(--margin);
-  text-align: center;
-}
-
-.input {
-  position: relative;
-}
-
-.form__search {
-  padding: 1rem 2rem;
-  font-size: 2rem;
-  font-family: inherit;
-  border-radius: 5rem;
-  outline: none;
-  margin-left: 2rem;
-}
-
-.form__search:focus {
-  background-color: var(--color-grey-light);
-  border: 2px solid green;
-}
-
-.button__search {
-  position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translateY(-50%);
-  font-size: 4rem;
-  cursor: pointer;
 }
 
 .weather {
@@ -98,8 +73,161 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--color-grey);
+  background-color: var(--color-blue-light);
   text-align: center;
+  border-radius: 1rem;
 }
+
+.country {
+  min-height: 50vh;
+  min-width: 50vh;
+}
+
+.country__name {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  padding: 1rem 3rem 0;
+}
+
+.country__city {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+
+.country__img {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.img {
+  position: relative;
+  margin-left: 5rem;
+}
+
+.img__weather {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+.img__text {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.country__img--temp {
+  flex: 1;
+  font-size: 4rem;
+}
+
+.packet {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: space-around;
+}
+
+.atmospheric {
+  padding: 1rem 0;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.atmospheric__data {
+  font-size: 1.75rem;
+  letter-spacing: 1px;
+}
+
+.atmospheric__button {
+  background-color: transparent;
+  margin-right: 1rem;
+  border: none;
+}
+
+.atmospheric__icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* ---------------------------------------------------------- */
+
+/* .display {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+}
+.weather {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-blue-light);
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.country {
+  height: 50vh;
+  width: 50vh;
+}
+
+.country__name {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  padding: 1rem 3rem;
+}
+.country__city {
+  font-size: 3rem;
+  letter-spacing: 2px;
+}
+.country__img {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.country__img--temp {
+  font-size: 4rem;
+  order: -1;
+  flex: 1;
+}
+.temp__icon {
+  font-size: 4rem;
+}
+.atmospheric {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.atmospheric__temp {
+  flex-basis: 50%;
+  font-size: 2rem;
+}
+.icon {
+  margin-right: 0.5rem;
+}
+.img {
+  position: relative;
+}
+.img__weather {
+  position: relative;
+}
+.img__text {
+  position: absolute;
+  bottom: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.7rem;
+} */
 
 /*# sourceMappingURL=index.a00031cb.css.map */

@@ -21,6 +21,7 @@ html {
 
 body {
   background: url('../img/tło-duże.jpg') no-repeat;
+  background-size: cover;
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
 }
@@ -28,7 +29,7 @@ body {
   max-width: 144rem;
   margin: var(--margin) auto;
   background-color: var(--color-grey-light);
-  height: calc(100vh - 2 * var(--margin));
+  min-height: calc(100vh - 2 * var(--margin));
 }
 .contener {
   display: flex;
@@ -38,6 +39,9 @@ body {
 .search {
   margin: 3rem 0;
 }
+.form {
+  position: relative;
+}
 .form__search {
   padding: 1rem 4rem;
   font-size: 2rem;
@@ -46,13 +50,16 @@ body {
   border: none;
 }
 .search__button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
   background-color: transparent;
   border: none;
-  margin-left: -40px;
 }
 .search__icon {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   cursor: pointer;
 }
 
@@ -60,20 +67,21 @@ body {
   position: relative;
   height: 80vh;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .weather {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--color-blue-light);
   text-align: center;
+  justify-content: space-around;
   border-radius: 1rem;
+  font-size: 3rem;
 }
 
 .country {
-  min-height: 50vh;
-  min-width: 50vh;
+  min-height: 40vh;
+  min-width: 40vh;
+  background-color: var(--color-blue-light);
 }
 
 .country__name {
@@ -94,6 +102,11 @@ body {
 .img {
   position: relative;
   margin-left: 5rem;
+}
+.img__weather {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
 }
 .img__text {
   position: absolute;
@@ -129,7 +142,7 @@ body {
 
 .atmospheric__button {
   background-color: transparent;
-  margin-right: 1rem;
+  margin-right: 0.5rem;
   border: none;
 }
 .atmospheric__icon {
@@ -137,74 +150,105 @@ body {
   height: 2rem;
 }
 
-/* ---------------------------------------------------------- */
-/* .display {
-  position: relative;
-  height: 80vh;
-  width: 100%;
-}
-.weather {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: var(--color-blue-light);
-  text-align: center;
-  border-radius: 1rem;
+/* -----------------MEDIA QUERY----------------------------------- */
+
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 60%;
+    height: 100vh;
+  }
+  body {
+    background: url('../img/tło-małe.jpg') no-repeat;
+    background-size: cover;
+  }
+
+  .wrapper {
+    height: 100vh;
+    margin: 0;
+  }
+  .img {
+    margin-left: 2rem;
+  }
 }
 
-.country {
-  height: 50vh;
-  width: 50vh;
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
 }
 
-.country__name {
-  font-size: 4rem;
-  letter-spacing: 2px;
-  padding: 1rem 3rem;
-}
-.country__city {
-  font-size: 3rem;
-  letter-spacing: 2px;
-}
-.country__img {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 45%;
+  }
+  .img {
+    margin-left: 0;
+  }
 }
 
-.country__img--temp {
-  font-size: 4rem;
-  order: -1;
-  flex: 1;
-}
-.temp__icon {
-  font-size: 4rem;
-}
-.atmospheric {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-top: 3rem;
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  html {
+    font-size: 50%;
+  }
+  .wrapper {
+    margin: 0;
+    height: 100vh;
+  }
+
+  .country__name {
+    font-size: 4rem;
+    padding: 1rem 3rem 0;
+  }
+
+  .atmospheric__data {
+    font-size: 3rem;
+  }
+
+  .packet {
+    margin-top: 7rem;
+  }
+  .atmospheric {
+    flex-basis: 30%;
+  }
+
+  .country {
+    min-height: 50vh;
+    min-width: 70vw;
+  }
+  .img {
+    margin-left: 0;
+  }
 }
 
-.atmospheric__temp {
-  flex-basis: 50%;
-  font-size: 2rem;
+@media screen and (max-width: 900px) and (orientation: landscape) {
+  html {
+    font-size: 45%;
+  }
+
+  .country__name {
+    font-size: 3rem;
+    padding: 0rem 2rem 0;
+  }
+
+  .atmospheric__data {
+    font-size: 2.5rem;
+  }
+  .img {
+    position: relative;
+    margin-left: 10rem;
+    width: 100px;
+    height: 100px;
+  }
+  .packet {
+    margin-top: 3rem;
+  }
 }
-.icon {
-  margin-right: 0.5rem;
+
+@media screen and (max-width: 600px) and (orientation: landscape) {
+  html {
+    font-size: 40%;
+  }
+  .atmospheric__data {
+    font-size: 2rem;
+  }
 }
-.img {
-  position: relative;
-}
-.img__weather {
-  position: relative;
-}
-.img__text {
-  position: absolute;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.7rem;
-} */
